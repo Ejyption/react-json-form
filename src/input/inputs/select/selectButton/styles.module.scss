@@ -1,0 +1,78 @@
+.dropDownButton {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  cursor: pointer;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #00000020;
+  box-shadow: 2px 2px 4px 1px #00000010;
+  box-sizing: border-box;
+  color: inherit;
+
+  .valueText {
+    flex: 1;
+    padding: 0 10px;
+    line-height: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 16px;
+    border-color: #00000020;
+    &.placeholder {
+      opacity: 0.5;
+    }
+  }
+
+  .iconWrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 30px;
+    height: 38px;
+    .icon {
+      opacity: 0.7;
+    }
+  }
+
+  &.part1,
+  &.part2,
+  &.part3 {
+    .valueText {
+      text-align: center;
+      border-right-width: 1px;
+      border-right-style: solid;
+    }
+    .iconWrapper {
+      display: none;
+    }
+  }
+  &.part1 {
+    border-right: none;
+  }
+  &.part2 {
+    border-right: none;
+    border-left: none;
+  }
+  &.part3 {
+    border-left: none;
+    .valueText {
+      border-right-width: 0;
+    }
+  }
+  &.dark {
+    background: #ffffff08;
+    border-color: #ffffff10;
+    .valueText {
+      border-color: #ffffff10;
+    }
+  }
+  &.open {
+    background-color: #287bba;
+    color: #fff;
+  }
+  &.error {
+    border-color: #c00;
+  }
+}

@@ -1,0 +1,43 @@
+.optionWrapper {
+  padding: 0.5em;
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid #00000010;
+  cursor: pointer;
+  .checkbox {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #00000020;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    &.checked {
+      background-color: #6ab66a;
+      border-color: #6ab66a;
+    }
+    .icon {
+      color: #fff;
+      width: 18px;
+    }
+  }
+  .optionText {
+    text-align: left;
+    // line-height: normal;
+    // overflow: hidden;
+    // text-overflow: ellipsis;
+    // white-space: nowrap;
+    flex: 1;
+  }
+  &:hover {
+    background-color: #00ff0010;
+  }
+
+  &.dark {
+    border-color: #ffffff10;
+    .checkbox {
+      border-color: #ffffff30;
+    }
+  }
+}

@@ -1,0 +1,89 @@
+.optionsWrapper {
+  box-sizing: border-box;
+  background-color: #fff;
+  color: #111;
+  z-index: 100;
+  .label {
+    padding: 10px 20px;
+    background-color: #00000010;
+    color: inherit;
+  }
+  .optionsList {
+    max-height: 280px;
+    overflow: auto;
+  }
+  &.hidden {
+    display: none;
+  }
+  @media screen and (max-width: 767px) {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    .optionsList {
+      height: 300px;
+      padding-bottom: 30px;
+      box-sizing: border-box;
+    }
+    &.open {
+      display: block;
+      animation-name: slideUp;
+      animation-duration: 0.3s;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+    }
+    &.close {
+      animation-name: slideDown;
+      animation-duration: 0.3s;
+      animation-timing-function: ease-out;
+      animation-fill-mode: forwards;
+    }
+  }
+  @media screen and (min-width: 767px) {
+    position: absolute;
+    border: 1px solid #287bba;
+    width: 100%;
+    left: 0;
+    .label {
+      display: none;
+    }
+    margin-top: 2px;
+    &.above {
+      top: auto;
+      bottom: 42px;
+    }
+    &.close {
+      display: none;
+    }
+  }
+  &.dark {
+    background-color: #111;
+    color: #eee;
+    .label {
+      background-color: #000;
+    }
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideDown {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100vh);
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+}

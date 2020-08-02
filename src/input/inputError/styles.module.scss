@@ -1,0 +1,16 @@
+.error {
+  display: flex;
+  align-items: center;
+  color: #900;
+  .errorText {
+    color: inherit;
+  }
+  .icon {
+    color: inherit;
+    height: 16px;
+    margin-left: 4px;
+  }
+  &.dark {
+    color: #d00;
+  }
+}

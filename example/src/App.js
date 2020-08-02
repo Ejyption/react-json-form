@@ -1,10 +1,20 @@
 import React from 'react'
-
-import { ExampleComponent } from '@ejyption/react-json-form'
+import Form from '@ejyption/react-json-form'
 import '@ejyption/react-json-form/dist/index.css'
+import { inputs } from './inputs'
+import { submitButtonOptions } from './submitButtonOptions'
+import './app.scss'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return (
+    <div className='form-wrapper'>
+      <Form
+        inputs={inputs}
+        cancel={() => {}}
+        submitButtonOptions={submitButtonOptions}
+      />
+    </div>
+  )
 }
 
 export default App

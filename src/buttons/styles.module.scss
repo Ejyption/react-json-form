@@ -1,0 +1,58 @@
+.buttonsWrapper {
+  width: 100%;
+  display: flex;
+  padding-top: 20px;
+  max-width: 400px;
+  button {
+    flex: 1;
+    padding: 0 10px;
+    height: 40px;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+    box-shadow: 2px 2px 4px 1px #00000020;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      background: #00000020;
+    }
+    .buttonText {
+      position: relative;
+    }
+    &:hover::before {
+      background: #ffffff10;
+    }
+    &:active::before {
+      background: #00000020;
+    }
+  }
+  .submitButton {
+    background: #19b119;
+    color: #fff;
+    .spinner {
+      width: 20px;
+      height: 20px;
+      animation-name: rotate;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+    @keyframes rotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+  .cancelButton {
+    background: #555;
+    color: #fff;
+    margin-left: 20px;
+  }
+}

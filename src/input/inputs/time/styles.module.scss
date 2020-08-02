@@ -1,0 +1,23 @@
+.dateSelectWrapper {
+  position: relative;
+  display: flex;
+  height: 40px;
+  width: 100%;
+  font-size: 16px;
+  box-sizing: border-box;
+  .day,
+  .month,
+  .year {
+    display: flex;
+    overflow: hidden;
+  }
+  .day {
+    flex: 1;
+  }
+  .month {
+    flex: 1;
+  }
+  .year {
+    flex: 1;
+  }
+}

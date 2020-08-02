@@ -1,0 +1,36 @@
+.wrapper {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  position: relative;
+  float: left;
+
+  .labelAndError {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 4px;
+  }
+  .inputWrapper {
+    position: relative;
+  }
+  .errorMessage {
+    font-size: 0.9em;
+    color: #900;
+  }
+  .helper {
+    font-style: italic;
+    font-size: 0.8em;
+    color: inherit;
+    margin-top: 4px;
+    opacity: 0.7;
+  }
+
+  &.dark {
+    color: #eee;
+  }
+
+  &.half {
+    width: calc(50% - 10px);
+    margin-right: 10px;
+  }
+}
