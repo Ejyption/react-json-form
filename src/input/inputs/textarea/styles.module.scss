@@ -1,0 +1,26 @@
+.textareaInput {
+  display: flex;
+  align-items: center;
+  padding: 8px 14px;
+  width: 100%;
+  max-height: 400px;
+  font-size: 16px;
+  color: inherit;
+  border: 1px solid #00000020;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 4px 1px #00000010;
+  background-color: transparent;
+  font-family: inherit;
+  resize: none;
+  &.dark {
+    border-color: #ffffff10;
+    background: #ffffff08;
+  }
+  &:focus {
+    outline: none;
+    border-color: #287bba;
+  }
+  &.error {
+    border-color: #c00;
+  }
+}

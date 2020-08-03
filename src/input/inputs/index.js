@@ -1,4 +1,5 @@
 export { default as Text } from './text'
+export { default as Textarea } from './textarea'
 export { default as Select } from './select'
 export { default as Checklist } from './checklist'
 export { default as DateSelect } from './date'

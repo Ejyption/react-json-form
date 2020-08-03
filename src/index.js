@@ -112,6 +112,7 @@ Form.propTypes = {
       value: PropTypes.any,
       type: PropTypes.oneOf([
         'text',
+        'textarea',
         'number',
         'password',
         'email',
