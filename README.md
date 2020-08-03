@@ -21,7 +21,35 @@ npm install --save @ejyption/react-json-form
 - select
 - toggle
 
-## Usage
+## Individual Input Usage
+
+```jsx
+import React, { useState, useEffect } from 'react'
+import { Input } from '@ejyption/react-json-form'
+import '@ejyption/react-json-form/dist/index.css'
+
+const Example = (props) => {
+  const [superhero, setSuperhero] = useState('')
+  useEffect(() => {
+    console.log(superhero)
+  }, [superhero])
+
+  return (
+    <Input
+      type='text'
+      name='superhero'
+      label="Who's your favourite superhero?"
+      value={superhero}
+      onChange={setSuperhero}
+      autoFocus
+    />
+  )
+}
+
+export default Example
+```
+
+## Form Usage
 
 ### app.js
 
