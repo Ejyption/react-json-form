@@ -164,7 +164,3 @@ export const submitButtonOptions = {
 ## License
 
 MIT © [Ejyption](https://github.com/Ejyption)
-
-## Keywords
-
-React JSON Form Forms Component Validation

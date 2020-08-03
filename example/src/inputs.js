@@ -6,6 +6,13 @@ export const inputs = [
     autoFocus: true
   },
   {
+    type: 'textarea',
+    name: 'description',
+    label: 'Describe yourself',
+    placeholder: '',
+    autoFocus: true
+  },
+  {
     type: 'email',
     name: 'email',
     label: 'Email Address',

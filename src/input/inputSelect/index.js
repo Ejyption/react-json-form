@@ -1,6 +1,7 @@
 import {
   Select,
   Text,
+  Textarea,
   Checklist,
   DateSelect,
   TimeSelect,
@@ -12,6 +13,8 @@ export const getInputType = (type) => {
   switch (type) {
     case 'text':
       return Text
+    case 'textarea':
+      return Textarea
     case 'email':
       return Text
     case 'password':

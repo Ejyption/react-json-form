@@ -92,6 +92,7 @@ Input.propTypes = {
   placeholder: PropTypes.string,
   type: PropTypes.oneOf([
     'text',
+    'textarea',
     'number',
     'password',
     'email',
