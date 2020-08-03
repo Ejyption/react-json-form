@@ -37,6 +37,7 @@ const Select = forwardRef((props, ref) => {
         optionsOpen={optionsOpen}
         ref={selectButtonRef}
         open={toggle}
+        name={props.name}
         error={props.error}
         mode={props.mode}
         className={props.className}
