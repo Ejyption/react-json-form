@@ -80,6 +80,7 @@ const DateSelect = forwardRef(
             error={props.error}
             width={props.width}
             className='part1'
+            name={`input_${name}_day`}
           />
         </div>
         <div className={styles.month}>
@@ -93,6 +94,7 @@ const DateSelect = forwardRef(
             error={props.error}
             width={props.width}
             className='part2'
+            name={`input_${name}_month`}
           />
         </div>
         <div className={styles.year}>
@@ -106,6 +108,7 @@ const DateSelect = forwardRef(
             error={props.error}
             width={props.width}
             className='part3'
+            name={`input_${name}_year`}
           />
         </div>
       </div>
