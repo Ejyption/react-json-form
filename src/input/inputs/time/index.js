@@ -41,6 +41,7 @@ const TimeSelect = forwardRef(
             error={props.error}
             width={props.width}
             className='part1'
+            name={`input_${name}_hour`}
           />
         </div>
         <div className={styles.month}>
@@ -54,6 +55,7 @@ const TimeSelect = forwardRef(
             error={props.error}
             width={props.width}
             className='part2'
+            name={`input_${name}_minute`}
           />
         </div>
         <div className={styles.year}>
@@ -67,6 +69,7 @@ const TimeSelect = forwardRef(
             error={props.error}
             width={props.width}
             className='part3'
+            name={`input_${name}_ampm`}
           />
         </div>
       </div>
