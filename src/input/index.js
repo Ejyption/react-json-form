@@ -31,6 +31,7 @@ const Input = forwardRef((props, ref) => {
     }
   }
   useEffect(() => {
+    if (props.onChange) props.onChange(inputValue)
     validate()
   }, [inputValue])
 
@@ -52,7 +53,8 @@ const Input = forwardRef((props, ref) => {
     focus: focus,
     validateInput: validate,
     getValue: returnValue,
-    getOffsetTop: getOffsetTop
+    getOffsetTop: getOffsetTop,
+    overrideValue: setInputValue
   }))
 
   const InputInner = useMemo(() => getInputType(props.type), [props.type])
@@ -70,8 +72,8 @@ const Input = forwardRef((props, ref) => {
         <InputInner
           error={!!error}
           ref={inputRef}
-          onChange={setInputValue}
           {...props}
+          onChange={setInputValue}
           // override JSON value provided so we can modify in our controlled environment
           value={inputValue}
         />
