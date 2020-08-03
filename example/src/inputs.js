@@ -2,15 +2,13 @@ export const inputs = [
   {
     name: 'firstName',
     label: 'First Name',
-    placeholder: 'Put your name here',
-    autoFocus: true
+    placeholder: 'Put your name here'
   },
   {
     type: 'textarea',
     name: 'description',
     label: 'Describe yourself',
-    placeholder: '',
-    autoFocus: true
+    placeholder: ''
   },
   {
     type: 'email',
