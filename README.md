@@ -13,6 +13,7 @@ npm install --save @ejyption/react-json-form
 ## Form input types
 
 - text
+- textarea
 - email
 - number
 - password
