@@ -2,7 +2,8 @@ export const inputs = [
   {
     name: 'firstName',
     label: 'First Name',
-    placeholder: 'Put your name here'
+    placeholder: 'Put your name here',
+    required: true
   },
   {
     type: 'textarea',
@@ -32,8 +33,8 @@ export const inputs = [
     type: 'date',
     name: 'dob',
     label: 'Date of Birth',
-    helper: 'You have to be older than me',
-    beforeDate: '03/09/1990'
+    helper: 'You have to be younger than me',
+    afterDate: '03/09/1990'
   },
   {
     type: 'toggle',
