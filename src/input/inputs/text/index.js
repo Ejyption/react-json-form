@@ -9,6 +9,10 @@ const TextInput = forwardRef(
       focus: () => inputRef.current.focus()
     }))
 
+    const blurred = () => {
+      if (props.onBlur) props.onBlur(value)
+    }
+
     let className = `${styles.textInput} ${styles[props.mode]}`
     if (props.error) className += ` ${styles.error}`
 
@@ -22,6 +26,7 @@ const TextInput = forwardRef(
         id={'input_' + name}
         type={props.type}
         onChange={(e) => onChange(e.target.value)}
+        onBlur={blurred}
         required={props.required}
         ref={inputRef}
       />
@@ -39,6 +44,7 @@ TextInput.propTypes = {
   value: PropTypes.string,
   placeholder: PropTypes.string,
   onChange: PropTypes.func.isRequired,
+  onBlur: PropTypes.func,
   required: PropTypes.bool
 }
 

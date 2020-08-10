@@ -107,7 +107,8 @@ Input.propTypes = {
   ]),
   beforeDate: PropTypes.string,
   afterDate: PropTypes.string,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  onBlur: PropTypes.func
 }
 
 export default memo(Input)

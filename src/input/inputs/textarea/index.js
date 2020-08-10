@@ -14,6 +14,10 @@ const TextareaInput = forwardRef(
       focus: () => inputRef.current.focus()
     }))
 
+    const blurred = () => {
+      if (props.onBlur) props.onBlur(value)
+    }
+
     useEffect(() => {
       resize()
     }, [value])
@@ -35,6 +39,7 @@ const TextareaInput = forwardRef(
         name={name}
         id={'input_' + name}
         onChange={(e) => onChange(e.target.value)}
+        onBlur={blurred}
         required={props.required}
         rows={1}
         ref={inputRef}
@@ -53,6 +58,7 @@ TextareaInput.propTypes = {
   value: PropTypes.string,
   placeholder: PropTypes.string,
   onChange: PropTypes.func.isRequired,
+  onBlur: PropTypes.func,
   required: PropTypes.bool
 }
 

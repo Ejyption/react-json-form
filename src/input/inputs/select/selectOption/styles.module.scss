@@ -31,20 +31,26 @@
   }
   &.span-2 {
     width: 50%;
+    float: left;
   }
   &.span-3 {
     width: calc(100% / 3);
+    float: left;
   }
   &.span-4 {
     width: 25%;
+    float: left;
   }
   &.span-5 {
     width: 20%;
+    float: left;
   }
   &.span-6 {
     width: calc(100% / 6);
+    float: left;
   }
   &.span-7 {
     width: calc(100% / 7);
+    float: left;
   }
 }
