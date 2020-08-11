@@ -24,7 +24,7 @@ export const validateRequired = (value) => {
 }
 export const validateEmail = (value) => {
   if (!value) return true
-  return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)
+  return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,5})+$/.test(value)
 }
 export const validateNumber = (value) => {
   if (value === null || typeof value === 'boolean') return false
