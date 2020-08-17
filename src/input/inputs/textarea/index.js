@@ -43,6 +43,7 @@ const TextareaInput = forwardRef(
         required={props.required}
         rows={1}
         ref={inputRef}
+        autoComplete={props.autoComplete}
       />
     )
   }
@@ -59,7 +60,8 @@ TextareaInput.propTypes = {
   placeholder: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   onBlur: PropTypes.func,
-  required: PropTypes.bool
+  required: PropTypes.bool,
+  autoComplete: PropTypes.string
 }
 
 export default React.memo(TextareaInput)

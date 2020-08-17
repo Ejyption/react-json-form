@@ -29,6 +29,7 @@ const TextInput = forwardRef(
         onBlur={blurred}
         required={props.required}
         ref={inputRef}
+        autoComplete={props.autoComplete}
       />
     )
   }
@@ -45,7 +46,8 @@ TextInput.propTypes = {
   placeholder: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   onBlur: PropTypes.func,
-  required: PropTypes.bool
+  required: PropTypes.bool,
+  autoComplete: PropTypes.string
 }
 
 export default React.memo(TextInput)
