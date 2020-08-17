@@ -6,7 +6,19 @@ import Input from './input'
 import FormError from './formError'
 export { default as Input } from './input'
 
-const Form = ({ submit, cancel, inputs, submitButtonOptions, mode }) => {
+const Form = ({
+  submit,
+  cancel,
+  inputs,
+  submitButtonOptions,
+  mode,
+  overrideValues
+}) => {
+  const overridenInputs = inputs.map((a) => ({
+    ...a,
+    value: overrideValues[a.name] || a.value
+  }))
+  const [allInputs] = useState(overridenInputs)
   const inputsRef = useRef(inputs.map((input) => createRef()))
   const [loading, setLoading] = useState(false)
   const [formError, setFormError] = useState(null)
@@ -72,7 +84,7 @@ const Form = ({ submit, cancel, inputs, submitButtonOptions, mode }) => {
       ref={formRef}
     >
       <FormError formError={formError} />
-      {inputs.map((input, k) => (
+      {allInputs.map((input, k) => (
         <Input
           data-test={input.name}
           key={k}
@@ -98,7 +110,8 @@ Form.defaultProps = {
     setTimeout(() => {
       cb(new Error("You don't have a submit function"), null)
     }, 1000)
-  }
+  },
+  overrideValues: {}
 }
 
 Form.propTypes = {
@@ -126,7 +139,8 @@ Form.propTypes = {
       beforeDate: PropTypes.string,
       afterDate: PropTypes.string,
       required: PropTypes.bool,
-      mustMatch: PropTypes.any
+      mustMatch: PropTypes.any,
+      overrideValues: PropTypes.object
     })
   )
 }

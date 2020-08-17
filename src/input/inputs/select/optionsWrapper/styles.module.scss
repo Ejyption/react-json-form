@@ -15,7 +15,7 @@
   &.hidden {
     display: none;
   }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 680px) {
     position: fixed;
     width: 100%;
     left: 0;
@@ -39,7 +39,7 @@
       animation-fill-mode: forwards;
     }
   }
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: 680px) {
     position: absolute;
     border: 1px solid #287bba;
     width: 100%;

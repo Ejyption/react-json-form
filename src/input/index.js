@@ -61,13 +61,16 @@ const Input = forwardRef((props, ref) => {
 
   let className = `${styles.wrapper} ${styles[props.mode]} `
   if (props.width) className += ` ${styles[props.width]}`
+  if (props.noMarginBottom) className += ` ${styles.noMarginBottom}`
 
   return (
     <div className={className} ref={wrapperRef}>
-      <div className={styles.labelAndError}>
-        <Label focus={focus} label={props.label} required={props.required} />
-        <InputError mode={props.mode} error={error} />
-      </div>
+      {props.label ? (
+        <div className={styles.labelAndError}>
+          <Label focus={focus} label={props.label} required={props.required} />
+          <InputError mode={props.mode} error={error} />
+        </div>
+      ) : null}
       <div className={styles.inputWrapper}>
         <InputInner
           error={!!error}
@@ -78,8 +81,12 @@ const Input = forwardRef((props, ref) => {
           value={inputValue}
         />
       </div>
-      <div className={styles.errorMessage}>{errorMessage}</div>
-      <div className={styles.helper}>{props.helper}</div>
+      {errorMessage ? (
+        <div className={styles.errorMessage}>{errorMessage}</div>
+      ) : null}
+      {props.helper ? (
+        <div className={styles.helper}>{props.helper}</div>
+      ) : null}
     </div>
   )
 })

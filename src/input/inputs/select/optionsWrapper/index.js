@@ -15,9 +15,11 @@ const OptionsWrapper = ({ optionsOpen, ...props }) => {
 
   useEffect(() => {
     if (props.value) {
-      optionsListRef.current.scrollTo({
-        top: document.getElementById('option_' + props.value).offsetTop - 100
-      })
+      const el = document.getElementById('option_' + props.value)
+      if (el)
+        optionsListRef.current.scrollTo({
+          top: el.offsetTop - 100
+        })
     }
   }, [])
 
@@ -30,7 +32,6 @@ const OptionsWrapper = ({ optionsOpen, ...props }) => {
       window.removeEventListener('scroll', props.close)
     }
   }, [])
-  const optionsWrapperClicked = (e) => e.stopPropagation()
 
   let className = `${styles.optionsWrapper} ${styles.open} `
   className += `${styles[optionsPosition]}`
@@ -39,7 +40,7 @@ const OptionsWrapper = ({ optionsOpen, ...props }) => {
 
   return (
     <div ref={optionsPositionRef}>
-      <div onClick={optionsWrapperClicked} className={className}>
+      <div className={className}>
         <div className={styles.label}>{props.label}</div>
         <div ref={optionsListRef} className={styles.optionsList}>
           {props.options.map((option, index) => (
