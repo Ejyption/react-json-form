@@ -49,6 +49,7 @@ npm install --save @ejyption/react-json-form
 ## Additional input object props when using inputs without a form
 - ```onChange``` Function. This function will get called upon change to the input and will pass the value of the input.
 - ```onBlur``` Function. This function will get called on blur of the input and will pass the value.
+- ```mode``` String, either "light" or "dark". Changes the styling to suit dark or light themes.
 
 Methods (can access them with a reference)
 - ```focus``` Function. focuses on the input
