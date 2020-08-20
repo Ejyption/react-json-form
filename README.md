@@ -12,7 +12,7 @@ npm install --save @ejyption/react-json-form
 
 ## Form input types
 
-- ```text```
+- text
 - textarea (height auto adjusts as you write more)
 - email
 - number
