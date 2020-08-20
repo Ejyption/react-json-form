@@ -29,6 +29,7 @@ npm install --save @ejyption/react-json-form
 - ```cancel``` Function. If there is a cancel function present, react-json-form renders a cancel button next to the submit button. The cancel button can be any function at your descretion.
 - ```mode``` String, either "light" or "dark". Changes the styling to suit dark or light themes.
 - ```inputs``` Array of objects. This prop is an array that needs to contain the input objects. Each object will render an input respective to its position is in the array. The format for these objects are described below
+- ```submitButtonOptions``` Object. This contains details of what you wish the submit button to say and how it should be styled. An example of the format is  ```{ text:"Save Form", style: {backgroundColor:"red"} }```
   
 ## Input object format
 - ```label``` String. The label for the input
