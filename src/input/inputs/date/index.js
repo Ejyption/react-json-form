@@ -10,10 +10,12 @@ import React, {
 import PropTypes from 'prop-types'
 import Select from './../select'
 
+const getInitialValue = (val) => (typeof val === 'string' ? new Date(val) : val)
+
 const DateSelect = forwardRef(
   ({ name, placeholder, value, onChange, ...props }, ref) => {
     const daySelectRef = useRef()
-    const [date, setDate] = useState(value)
+    const [date, setDate] = useState(getInitialValue(value))
     const [day, setDay] = useState(date.getDate())
     const [month, setMonth] = useState(date.getMonth())
     const [year, setYear] = useState(date.getFullYear())
@@ -124,7 +126,7 @@ DateSelect.defaultProps = {
 }
 
 DateSelect.propTypes = {
-  value: PropTypes.object,
+  value: PropTypes.any,
   beforeDate: PropTypes.string,
   afterDate: PropTypes.string,
   placeholder: PropTypes.string,

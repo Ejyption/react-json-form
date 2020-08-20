@@ -32,6 +32,7 @@ export const inputs = [
   {
     type: 'date',
     name: 'dob',
+    value: '2020-04-10T12:00:00.000Z',
     label: 'Date of Birth',
     helper: 'You have to be younger than me',
     afterDate: '03/09/1990'
