@@ -10,6 +10,9 @@
 npm install --save @ejyption/react-json-form
 ```
 
+### Dark Mode & Light Mode examples
+![Image of Yaktocat](https://github.com/Ejyption/react-json-form/blob/master/example/public/react-js-form.jpg)
+
 ## Form input types
 
 - text
