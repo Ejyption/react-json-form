@@ -27,7 +27,6 @@ const TextInput = forwardRef(
         type={props.type}
         onChange={(e) => onChange(e.target.value)}
         onBlur={blurred}
-        required={props.required}
         ref={inputRef}
         autoComplete={props.autoComplete}
       />

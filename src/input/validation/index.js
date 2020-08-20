@@ -1,8 +1,13 @@
 export const validateInput = (value, props) => {
-  if (props.required && !validateRequired(value)) return { err: 'Required' }
-  if (props.type === 'email' && !validateEmail(value)) return { err: 'Invalid' }
+  if (props.required && !validateRequired(value))
+    return { err: 'Required', message: `${props.label} is required` }
+  if (props.type === 'email' && !validateEmail(value))
+    return {
+      err: 'Invalid',
+      message: 'You have entered an invalid email address'
+    }
   if (props.type === 'number' && !validateNumber(value))
-    return { err: 'Invalid' }
+    return { err: 'Invalid', message: 'You have entered an invalid number' }
   if (props.type === 'date') {
     if (props.beforeDate && !validateBeforeDate(value, props.beforeDate))
       return {

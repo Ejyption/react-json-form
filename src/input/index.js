@@ -13,7 +13,6 @@ import { getInputType } from './inputSelect'
 import PropTypes from 'prop-types'
 import Label from './label'
 import { validateInput } from './validation'
-import InputError from './inputError'
 
 const Input = forwardRef((props, ref) => {
   const [inputValue, setInputValue] = useState(props.value)
@@ -66,10 +65,7 @@ const Input = forwardRef((props, ref) => {
   return (
     <div className={className} ref={wrapperRef}>
       {props.label ? (
-        <div className={styles.labelAndError}>
-          <Label focus={focus} label={props.label} required={props.required} />
-          <InputError mode={props.mode} error={error} />
-        </div>
+        <Label focus={focus} label={props.label} required={props.required} />
       ) : null}
       <div className={styles.inputWrapper}>
         <InputInner
