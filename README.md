@@ -12,17 +12,51 @@ npm install --save @ejyption/react-json-form
 
 ## Form input types
 
-- text
-- textarea
+- ```text```
+- textarea (height auto adjusts as you write more)
 - email
 - number
 - password
 - date
 - time
-- select
+- checklist
+- select (thoughtful styling for mobile & desktop)
 - toggle
 
-## Individual Input Usage
+## Props
+
+- ```submit``` Function. The submit prop needs to be a function which takes two paramaters. The first parameter is the formdata created by react-json-form and the second parameter is the callback. Call the callback function once you have finished using the formdata to stop the form loading spinner. Should there be an issue with submitting the formdata, pass a new Error with a message to the callback and a nice error message will pop up at the top of the form. The page will automatically scroll to the form error message.
+- ```cancel``` Function. If there is a cancel function present, react-json-form renders a cancel button next to the submit button. The cancel button can be any function at your descretion.
+- ```mode``` String, either "light" or "dark". Changes the styling to suit dark or light themes.
+- ```inputs``` Array of objects. This prop is an array that needs to contain the input objects. Each object will render an input respective to its position is in the array. The format for these objects are described below
+  
+## Input object format
+- ```label``` String. The label for the input
+- ```placeholder``` String.
+- ```autoFocus``` Boolean. Will autofocus on the last input that has autoFocus prop as true
+- ```autoComplete``` String. The same as using the autoComplete attribute on an HTML input. Either "off" or "on", "on" being the default.
+- ```helper``` String. This sits underneath an input, having a small font and being italic, is used to further describe what you are asking of the user.
+- ```options``` Array of objects. This is used with a select, or a checklist input type. Objects in this array should be of the format ```{label:"label", value:"value"}```
+- ```name``` String. This props is required and will be the key in the returned formdata.
+- ```value``` Any. This prop is optional if you wish to provide an initial value for the input.
+- ```type``` One Of. Types of inputs are listed in a section above
+- ```beforeDate``` UTC. Used for a date input type, it validates a date input requiring it to be before the date provided.
+- ```afterDate``` UTC. Used for a date input type, it validates a date input requiring it to be after the date provided.
+- ```required``` Boolean. Adds a * to the end of the label and validates against an empty input, array, date etc.
+- ```mustMatch``` Any. Validates input using a shallow compare to the mustMatch prop.
+- ```overrideValues``` Object ```{firstName:"Emad"}```. This object should contain both keys (standing in for an input name) and a value. In case you wish to hardcode the inputs prop and then override them with a fetched dataset. This is particularly useful if you save your react-json-form formdata and then wish to edit the values later using the fetched formdata.
+
+## Additional input object props when using inputs without a form
+- ```onChange``` Function. This function will get called upon change to the input and will pass the value of the input.
+- ```onBlur``` Function. This function will get called on blur of the input and will pass the value.
+
+Methods (can access them with a reference)
+- ```focus``` Function. focuses on the input
+- ```validateInput``` Function. Although validation occurs on any change, if you wish to validate when no change has occured, use this method.
+- ```getValue``` Function. Returns an object of the format ```{name: name, value: value}```
+- ```overrideValue``` Function. This allows you to override the input value programmatically.
+
+## Individual Input Usage (using inputs without a form)
 
 ```jsx
 import React, { useState, useEffect } from 'react'
@@ -64,16 +98,10 @@ import { submitButtonOptions } from './submitButtonOptions.js'
 const Example = (props) => {
   const onSubmit = (formData, callback) => {
     // do what you wish with the data
-    /* 
-      if there is an error with your form handling
-      simply add a new Error as an argument to the callback
-      callback(new Error("error message"))
-    */
-    /* 
-      if there is no issue, you can use the callback
-      with no arguments and the loading spinner will stop
-      callback()
-    */
+    
+    // callback(new Error("error message"))
+    // or
+    // callback()
   }
 
   return (
