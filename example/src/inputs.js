@@ -77,6 +77,7 @@ export const inputs = [
       { label: 'Romantic', value: 'Romantic' },
       { label: 'Thriller', value: 'Thriller' }
     ],
-    value: ['Action', 'Thriller']
+    value: ['Action', 'Thriller'],
+    required: true
   }
 ]

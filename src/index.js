@@ -39,7 +39,7 @@ const Form = ({
       if (err) {
         if (!hasError) {
           const t = inputsRef.current[i].current.getOffsetTop()
-          scrollTo(t)
+          scrollTo(t - 100)
         }
         hasError = true
       }
