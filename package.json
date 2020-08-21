@@ -1,6 +1,6 @@
 {
   "name": "@ejyption/react-json-form",
-  "version": "1.1.0",
+  "version": "1.1.02",
   "description": "React form component that utilises JSON",
   "author": "Ejyption",
   "license": "MIT",
@@ -57,12 +57,18 @@
     "dist"
   ],
   "keywords": [
-    "React",
-    "JSON",
-    "Form",
-    "Forms",
-    "Component",
-    "Validation",
+    "ejyption",
+    "@ejyption",
+    "react-json",
+    "react-json-form",
+    "react-json-forms",
+    "@ejyption/react-json-form",
+    "react",
+    "json",
+    "form",
+    "forms",
+    "component",
+    "validation",
     "ui"
   ]
 }
