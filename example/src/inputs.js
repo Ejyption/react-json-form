@@ -47,7 +47,8 @@ export const inputs = [
     type: 'number',
     name: 'weight',
     label: 'Weight',
-    placeholder: 'eg 82.5'
+    placeholder: 'eg 82.5',
+    step: '0.01'
   },
   {
     type: 'select',

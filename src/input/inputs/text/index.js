@@ -29,6 +29,7 @@ const TextInput = forwardRef(
         onBlur={blurred}
         ref={inputRef}
         autoComplete={props.autoComplete}
+        step={props.step}
       />
     )
   }
